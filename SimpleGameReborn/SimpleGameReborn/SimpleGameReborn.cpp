@@ -55,15 +55,69 @@ int main()
 
 			if (password == pass) {
 				system("cls");
+				cout << "Logging in..." << NEW_LINE;
 				cout << "Initializing system..." << NEW_LINE;
+				if (!fs::exists(USER_DATA2 + "ip.txt")) {
+					cout << "Assigning IP..." << NEW_LINE;
+					AssignIP();
+				}
+				
 				cout << "Welcome, " << username << "." << NEW_LINE;
 
-				cout << "Enter commands: " << NEW_LINE;
 				string commands;
-				cin >> commands;
+				cout << "Enter commands: " << NEW_LINE;
+				cin.ignore();
+				std::getline(cin, commands);
 
 				if (commands == "/help" || commands == "0") {
 					cout << "/date" << NEW_LINE;
+				}
+
+				if (commands == "/ls -all") {
+					cout << "Available directories: " << NEW_LINE;
+					cout << "/system" << NEW_LINE;
+					cout << "/programs" << NEW_LINE;
+					cout << "/downloads" << NEW_LINE;
+					cout << "/temp" << NEW_LINE;
+
+					cout << NEW_LINE;
+
+					string directory;
+					cout << "Enter directory: " << NEW_LINE;
+					cin.clear();
+					cin.sync();
+					std::getline(cin, directory);
+
+					if (directory == "/ls system") {
+						cout << "Retrieving list of directory..." << NEW_LINE;
+						Sleep(3 * 1000);
+						cout << "bootloader.exe" << NEW_LINE;
+						cout << "OS.dll" << NEW_LINE;
+						cout << "security.dll" << NEW_LINE;
+						cout << "mgr.exe" << NEW_LINE;
+					}
+
+					if (directory == "/ls programs") {
+						cout << "Retrieving list of directory..." << NEW_LINE;
+						Sleep(2 * 1000);
+						cout << "TCPCrack.exe" << NEW_LINE;
+						cout << "UDPFlooder.exe" << NEW_LINE;
+						cout << "SSHOverflow.exe" << NEW_LINE;
+						cout << "FTPDta.exe" << NEW_LINE;
+					}
+
+					if (directory == "/ls downloads") {
+						cout << "Empty" << NEW_LINE;
+					}
+
+					if (directory == "/ls temp") {
+						srand(time(0));
+						string temp[5] = { "TCD1AA" + rand() % 50, "TCD1AB" + rand() % 49, "TCD1AC" + rand() % 48, "TCD1AX" + rand() % 47, "TCD14AD" + rand() % 46 };
+						
+						for (int i = 0; i < sizeof(temp) / sizeof(string); i++) {
+							cout << temp[i] << NEW_LINE;
+						}
+					}
 				}
 
 				if (commands == "/date") {
@@ -72,11 +126,13 @@ int main()
 
 				if (commands == "/ip") {
 					if (fs::exists(USER_DATA2 + "ip.txt")) {
+						cout << username << "'s Battlestation@";
 						FReadFile(USER_DATA2 + "ip.txt");
+						cout << "Test Server@193.50.23.26" << NEW_LINE;
 					}
 
 					else {
-						AssignIP();
+						cout << "Coult not fetch IP" << NEW_LINE;
 					}
 				}
 
@@ -125,6 +181,8 @@ int main()
 				user << username << NEW_LINE;
 				user << password << NEW_LINE;
 				user.close();
+
+				cout << "Restart the system to log in" << NEW_LINE;
 			}
 
 			else {
