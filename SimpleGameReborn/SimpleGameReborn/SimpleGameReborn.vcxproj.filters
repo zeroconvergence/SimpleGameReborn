@@ -26,5 +26,8 @@
     <ClInclude Include="IP.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Servers.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
