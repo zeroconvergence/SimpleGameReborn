@@ -15,16 +15,21 @@ c:\users\0x6k7\source\repos\simplegamereborn\simplegamereborn\simplegamereborn.c
 c:\users\0x6k7\source\repos\simplegamereborn\simplegamereborn\simplegamereborn.cpp(154): warning C4244: 'argument': conversion from 'double' to 'DWORD', possible loss of data
 c:\users\0x6k7\source\repos\simplegamereborn\simplegamereborn\simplegamereborn.cpp(156): warning C4244: 'argument': conversion from 'double' to 'DWORD', possible loss of data
 c:\users\0x6k7\source\repos\simplegamereborn\simplegamereborn\simplegamereborn.cpp(171): warning C4244: 'argument': conversion from 'double' to 'DWORD', possible loss of data
-c:\users\0x6k7\source\repos\simplegamereborn\simplegamereborn\simplegamereborn.cpp(331): warning C4244: 'argument': conversion from 'double' to 'DWORD', possible loss of data
-c:\users\0x6k7\source\repos\simplegamereborn\simplegamereborn\simplegamereborn.cpp(513): warning C4244: 'argument': conversion from 'double' to 'DWORD', possible loss of data
-c:\users\0x6k7\source\repos\simplegamereborn\simplegamereborn\simplegamereborn.cpp(524): warning C4244: 'argument': conversion from 'double' to 'DWORD', possible loss of data
-c:\users\0x6k7\source\repos\simplegamereborn\simplegamereborn\simplegamereborn.cpp(590): warning C4244: 'argument': conversion from 'double' to 'DWORD', possible loss of data
+c:\users\0x6k7\source\repos\simplegamereborn\simplegamereborn\simplegamereborn.cpp(416): warning C4244: 'argument': conversion from 'double' to 'DWORD', possible loss of data
+c:\users\0x6k7\source\repos\simplegamereborn\simplegamereborn\simplegamereborn.cpp(624): warning C4244: 'argument': conversion from 'double' to 'DWORD', possible loss of data
+c:\users\0x6k7\source\repos\simplegamereborn\simplegamereborn\simplegamereborn.cpp(635): warning C4244: 'argument': conversion from 'double' to 'DWORD', possible loss of data
+c:\users\0x6k7\source\repos\simplegamereborn\simplegamereborn\simplegamereborn.cpp(701): warning C4244: 'argument': conversion from 'double' to 'DWORD', possible loss of data
+c:\users\0x6k7\source\repos\simplegamereborn\simplegamereborn\simplegamereborn.cpp(713): warning C4244: 'argument': conversion from 'double' to 'DWORD', possible loss of data
 c:\users\0x6k7\source\repos\simplegamereborn\simplegamereborn\simplegamereborn.cpp(40): warning C4390: ';': empty controlled statement found; is this the intent?
-c:\users\0x6k7\source\repos\simplegamereborn\simplegamereborn\simplegamereborn.cpp(405): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+c:\users\0x6k7\source\repos\simplegamereborn\simplegamereborn\simplegamereborn.cpp(499): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\time.h(506): note: see declaration of 'localtime'
-c:\users\0x6k7\source\repos\simplegamereborn\simplegamereborn\simplegamereborn.cpp(416): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+c:\users\0x6k7\source\repos\simplegamereborn\simplegamereborn\simplegamereborn.cpp(510): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\time.h(506): note: see declaration of 'localtime'
+c:\users\0x6k7\source\repos\simplegamereborn\simplegamereborn\simplegamereborn.cpp(521): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\time.h(506): note: see declaration of 'localtime'
   Generating code
-  All 560 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  1 of 560 functions ( 0.2%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
   SimpleGameReborn.vcxproj -> C:\Users\0x6k7\source\repos\SimpleGameReborn\Release\SimpleGameReborn.exe

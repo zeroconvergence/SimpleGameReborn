@@ -180,6 +180,47 @@ int main()
 
 				system("cls");
 
+				if (fs::exists(USER_DATA2 + "config.ini") && !fs::is_empty(USER_DATA2 + "config.ini")) {
+					fstream OSConfig(USER_DATA2 + "config.ini");
+					GoToASpecificLine(OSConfig, 1);
+					string accountpassword;
+					OSConfig >> accountpassword;
+
+					if (accountpassword == "ResetAccountPassword:True") {
+						cout << "Enter new password: " << NEW_LINE;
+						string newpassword;
+						cin >> newpassword;
+
+						if (newpassword.length() > 8) {
+							cout << "Resetting user account password..." << NEW_LINE;
+
+							ofstream userfile(USER_DATA2 + username + ".txt", std::ios::trunc);
+							userfile << username << NEW_LINE;
+							userfile << newpassword;
+
+							userfile.close();
+
+							cout << "Account password has been reset" << NEW_LINE;
+
+							ofstream userconfig(USER_DATA2 + "config.ini", std::ios::trunc);
+							userconfig << "ResetAccountPassword:False";
+							userconfig.close();
+
+
+							system("SimpleGameReborn.exe");
+							exit(0);
+						}
+
+						else {
+							cout << "Password must be between 8-30" << NEW_LINE;
+						}
+					}
+
+					if (accountpassword == "ResetAccountPassword:False") {
+
+					}
+				}
+
 				cout << "Logging in..." << NEW_LINE;
 				cout << "Initializing system..." << NEW_LINE;
 				if (!fs::exists(USER_DATA2 + "ip.txt")) {
@@ -200,6 +241,42 @@ int main()
 				cin.ignore();
 				std::getline(cin, commands);
 
+				if (commands == "/settings") {
+					cout << "Choose category: " << NEW_LINE;
+					int category;
+					cin >> category;
+
+					if (category == 0) {
+						cout << "[0] - Categories List" << NEW_LINE;
+						cout << "[1] - System Settings" << NEW_LINE;
+						cout << "[2] - Exit" << NEW_LINE;
+						system("SimpleGameReborn.exe");
+						exit(0);
+					}
+
+					if (category == 1) {
+						cout << "1 - Reset account password" << NEW_LINE;
+
+						cout << "Choose setting: " << NEW_LINE;
+						int setting;
+						cin >> setting;
+
+						if (setting == 1) {
+							ofstream config(USER_DATA2 + "config.ini", std::ios::beg);
+							config << "ResetAccountPassword:True" << NEW_LINE;
+							config.close();
+
+							system("SimpleGameReborn.exe");
+							exit(0);
+						}
+					}
+
+					if (category == 2) {
+						system("SimpleGameReborn.exe");
+						exit(0);
+					}
+				}
+
 				if (commands == "/help" || commands == "0") {
 					cout << "/date" << NEW_LINE;
 
@@ -211,6 +288,8 @@ int main()
 					cout << "/scp <filename>" << NEW_LINE;
 					cout << "/del <filename>" << NEW_LINE;
 					cout << "/ren <filename>" << NEW_LINE;
+
+					cout << "/settings" << NEW_LINE;
 				}
 
 				if (commands == "/ls -all") {
@@ -321,11 +400,17 @@ int main()
 						}
 
 						if (hostcommands == "0_234186.exe") {
-							cout << "This file was downloaded using an insecure connection. Would you like to continue?" << NEW_LINE;
-							int download;
-							cin >> download;
+							fstream OSDownloads(FILE_SYSTEM2 + "downloads.txt");
+							GoToASpecificLine(OSDownloads, 1);
+							string file;
+							OSDownloads >> file;
 
-							switch (download) {
+							if (file == "0_234186.exe") {
+								cout << "This file was downloaded using an insecure connection. Would you like to continue?" << NEW_LINE;
+								int download;
+								cin >> download;
+
+								switch (download) {
 								case 1: {
 									cout << rand() % 10000 << rand() % 1000 << rand() % 100 << NEW_LINE;
 									Sleep(2.5 * 1000);
@@ -349,6 +434,26 @@ int main()
 									system("SimpleGameReborn.exe");
 									exit(0);
 								}
+								}
+							}
+
+							/*else {
+								cout << "File " << hostcommands << " not found" << NEW_LINE;
+							}*/
+						}
+
+						if (hostcommands == "grocery.docx") {
+							fstream OSDownloads2(FILE_SYSTEM2 + "downloads.txt");
+							GoToASpecificLine(OSDownloads2, 1);
+							string file2;
+							OSDownloads2 >> file2;
+
+							if (file2 == "grocery.docx") {
+								cout << "OS didn't found program to open this file" << NEW_LINE;
+							}
+
+							else {
+								cout << "File " << hostcommands << " not found" << NEW_LINE;
 							}
 						}
 					}
@@ -450,13 +555,19 @@ int main()
 						}
 					}
 
-					/*if (date == "DateFormat:UK") {
+					if (date == "DateFormat:ISO8601") {
 						if (dateformat == "US") {
 							ofstream config(USER_DATA2 + "config.ini", std::ios::trunc);
 							config << "DateFormat:US" << NEW_LINE;
 							config.close();
 						}
-					}*/
+
+						if (dateformat == "UK") {
+							ofstream config(USER_DATA2 + "config.ini", std::ios::trunc);
+							config << "DateFormat:UK" << NEW_LINE;
+							config.close();
+						}
+					}
 					system("SimpleGameReborn.exe");
 					exit(0);
 				}
@@ -469,7 +580,7 @@ int main()
 					}
 
 					else {
-						cout << "Coult not fetch IP" << NEW_LINE;
+						cout << "Coult not fetch IP List" << NEW_LINE;
 					}
 				}
 
@@ -496,7 +607,7 @@ int main()
 						if (commands2 == "nmap " + TestServerIP) {
 							cout << "Starting Nmap 10.1 at 2034-01-26" << NEW_LINE;
 							cout << "Nmap scan report for " << TestServerIP << NEW_LINE;
-							cout << "Host is up (0.000" << rand() % 30 << "s latency)" << NEW_LINE;
+							cout << "Host is up (0.000" << rand() % 40 << "s latency)" << NEW_LINE;
 
 							cout << "PORT\tSTATE\n";
 							cout << "134\tclosed\n";
@@ -576,7 +687,7 @@ int main()
 										if (directory == "/ls downloads") {
 											cout << "Retrieving list of directory..." << NEW_LINE;
 											Sleep(3 * 1000);
-											cout << "work.docx" << NEW_LINE;
+											cout << "grocery.docx" << NEW_LINE;
 											cout << "0_234186.exe" << NEW_LINE;
 
 											cout << "Enter remote commands: " << NEW_LINE;
@@ -585,13 +696,25 @@ int main()
 											cin.sync();
 											std::getline(cin, remotecommands);
 
-											if (remotecommands == "scp 0_234186.exe") {
+											if (remotecommands == "/scp 0_234186.exe") {
 												cout << "Downloading 0_234186.exe..." << NEW_LINE;
 												Sleep(2.5 * 1000);
 												cout << "Downloaded!" << NEW_LINE;
 
 												ofstream downloads(FILE_SYSTEM2 + "downloads.txt", std::ios::trunc);
 												downloads << "0_234186.exe" << NEW_LINE;
+												downloads.close();
+												system("SimpleGameReborn.exe");
+												exit(0);
+											}
+
+											if (remotecommands == "/scp grocery.docx") {
+												cout << "Downloading grocery.docx..." << NEW_LINE;
+												Sleep(2.5 * 1000);
+												cout << "Downloaded!" << NEW_LINE;
+
+												ofstream downloads(FILE_SYSTEM2 + "downloads.txt", std::ios::trunc);
+												downloads << "grocery.docx" << NEW_LINE;
 												downloads.close();
 												system("SimpleGameReborn.exe");
 												exit(0);
@@ -604,20 +727,17 @@ int main()
 					}
 
 					else {
-						cout << "Use scan to find out available targets" << NEW_LINE;
+						cout << "Could not find device at " << ip << NEW_LINE;
 						system("SimpleGameReborn.exe");
 						exit(0);
 					}
 				} 
-				else {
-					cout << "Command " << commands << " not found" << NEW_LINE;
-				}
 			}
 		}
 	}
 
 	else {
-		if (username.length() < 4 || password.length() < 8 && username.length() < 4 && password.length() < 8) {
+		if (username.length() < 4 && password.length() < 8 || username.length() < 4 || password.length() < 8) {
 			cout << "Username and password are too weak. Do you really want to proceed?" << NEW_LINE;
 			int proceed;
 			cin >> proceed;
