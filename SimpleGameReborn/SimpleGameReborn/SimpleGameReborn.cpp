@@ -3,12 +3,13 @@
 #include <fstream>
 #include <filesystem>
 #include <Windows.h>
-#include "FileReader.h"
-
-#include "IP.h"
-#include "Servers.h"
 #include <chrono>
 #include <ctime>
+
+#include "FileReader.h"
+#include "IP.h"
+#include "Servers.h"
+#include "Timer.h"
 
 // Input & Output
 using std::cout;
@@ -168,8 +169,6 @@ int main()
 					exit(661);
 				}
 
-				Sleep(1.5 * 1000);
-
 				cout << "bootloader.exe [+]" << NEW_LINE;
 				Sleep(1 * 1000);
 				cout << "OS.dll [+]" << NEW_LINE;
@@ -206,18 +205,17 @@ int main()
 							userconfig << "ResetAccountPassword:False";
 							userconfig.close();
 
-
 							system("SimpleGameReborn.exe");
 							exit(0);
 						}
 
 						else {
-							cout << "Password must be between 8-30" << NEW_LINE;
+							cout << "Password must be between 8-30 characters" << NEW_LINE;
 						}
 					}
 
 					if (accountpassword == "ResetAccountPassword:False") {
-
+						
 					}
 				}
 
@@ -236,6 +234,8 @@ int main()
 
 				cout << "Welcome, " << username << "." << NEW_LINE;
 
+				//NormalTracker();
+
 				string commands;
 				cout << "Enter commands: " << NEW_LINE;
 				cin.ignore();
@@ -246,32 +246,46 @@ int main()
 					int category;
 					cin >> category;
 
-					if (category == 0) {
-						cout << "[0] - Categories List" << NEW_LINE;
-						cout << "[1] - System Settings" << NEW_LINE;
-						cout << "[2] - Exit" << NEW_LINE;
-						system("SimpleGameReborn.exe");
-						exit(0);
-					}
+					if (isdigit(category)) {
+						if (category == 0) {
+							cout << "[0] - Categories List" << NEW_LINE;
+							cout << "[1] - System Settings" << NEW_LINE;
+							cout << "[2] - Exit" << NEW_LINE;
+							system("SimpleGameReborn.exe");
+							exit(0);
+						}
 
-					if (category == 1) {
-						cout << "1 - Reset account password" << NEW_LINE;
+						if (category == 1) {
+							cout << "1 - Reset account password" << NEW_LINE;
 
-						cout << "Choose setting: " << NEW_LINE;
-						int setting;
-						cin >> setting;
+							cout << "Choose setting: " << NEW_LINE;
+							int setting;
+							cin >> setting;
 
-						if (setting == 1) {
-							ofstream config(USER_DATA2 + "config.ini", std::ios::beg);
-							config << "ResetAccountPassword:True" << NEW_LINE;
-							config.close();
+							if (setting == 1) {
+								ofstream config(USER_DATA2 + "config.ini", std::ios::beg);
+								config << "ResetAccountPassword:True" << NEW_LINE;
+								config.close();
 
+								system("SimpleGameReborn.exe");
+								exit(0);
+							}
+						}
+
+						if (category == 2) {
+							system("SimpleGameReborn.exe");
+							exit(0);
+						}
+
+						else {
+							cout << "Category " << category << " does not exist" << NEW_LINE;
 							system("SimpleGameReborn.exe");
 							exit(0);
 						}
 					}
 
-					if (category == 2) {
+					else {
+						cout << "Entered input is not a digit" << NEW_LINE;
 						system("SimpleGameReborn.exe");
 						exit(0);
 					}
@@ -436,10 +450,6 @@ int main()
 								}
 								}
 							}
-
-							/*else {
-								cout << "File " << hostcommands << " not found" << NEW_LINE;
-							}*/
 						}
 
 						if (hostcommands == "grocery.docx") {
@@ -449,7 +459,16 @@ int main()
 							OSDownloads2 >> file2;
 
 							if (file2 == "grocery.docx") {
-								cout << "OS didn't found program to open this file" << NEW_LINE;
+								cout << "Acord is not installed" << NEW_LINE;
+								cout << "Opening Notepad..." << NEW_LINE;
+								Sleep(2 * 1000);
+
+								cout << "1. J-Cola" << NEW_LINE;
+								cout << "2. 4 Eggs" << NEW_LINE;
+								cout << "3. Sugar" << NEW_LINE;
+								cout << "4. Snacks" << NEW_LINE;
+								cout << "5. 5 Apples" << NEW_LINE;
+								cout << "5. 2 Oranges" << NEW_LINE;
 							}
 
 							else {
@@ -576,19 +595,22 @@ int main()
 					if (fs::exists(USER_DATA2 + "ip.txt")) {
 						cout << username << "'s Battlestation@";
 						FReadFile(USER_DATA2 + "ip.txt");
-						cout << "Test Server@" << TestServerIP << NEW_LINE;
+						system("SimpleGameReborn.exe");
+						exit(0);
 					}
 
 					else {
-						cout << "Coult not fetch IP List" << NEW_LINE;
+						cout << "Could not fetch IP List" << NEW_LINE;
+						system("SimpleGameReborn.exe");
+						exit(0);
 					}
 				}
 
 				if (commands == "/scan") {
-					/*ofstream scan("scan.txt");
-					scan << FReadFile(USER_DATA2 + "ip.txt");
-					scan.close();
-					*/
+					cout << "Test Server@" << TestServerIP << NEW_LINE;
+					cout << "ISP Web Server@" << ISPWebServerIP << NEW_LINE;
+					system("SimpleGameReborn.exe");
+					exit(0);
 				}
 
 				if (commands == "/connect") {
@@ -726,6 +748,37 @@ int main()
 						}
 					}
 
+					if (ip == ISPWebServerIP) {
+						system("cls");
+						cout << "Connected to ISP Web Server@" << ISPWebServerIP << NEW_LINE;
+						cout << "Enter commands: " << NEW_LINE;
+						string commands3;
+						cin.ignore();
+						std::getline(cin, commands3);
+
+						if (commands3 == "nmap " + ISPWebServerIP) {
+							cout << "Starting Nmap 10.1 at 2034-01-26" << NEW_LINE;
+							cout << "Nmap scan report for " << ISPWebServerIP << NEW_LINE;
+							cout << "Host is up (0.000" << rand() % 40 << "s latency)" << NEW_LINE;
+
+							cout << "PORT\tSTATE\n";
+							cout << "21\tclosed\n";
+							cout << "22\tclosed\n";
+							cout << "53\tclosed\n";
+							cout << "443\tclosed\n";
+
+							cout << "Unauthorized connection has been detected. Disconnect from the server now." << NEW_LINE;
+							cout << "Tracking..." << NEW_LINE;
+
+							NormalTracker();
+
+							cout << "enter";
+							string str;
+							cin >> str;
+
+						}
+					}
+
 					else {
 						cout << "Could not find device at " << ip << NEW_LINE;
 						system("SimpleGameReborn.exe");
@@ -747,15 +800,24 @@ int main()
 					system("cls");
 					cout << "Creating account..." << NEW_LINE;
 
-					if (fs::create_directory(USER_DATA)) {
+					if (!fs::exists(USER_DATA) && !fs::is_directory(USER_DATA)) {
+						if (fs::create_directory(USER_DATA)) {
+							ofstream user(USER_DATA2 + username + ".txt");
+							user << username << NEW_LINE;
+							user << password << NEW_LINE;
+							user.close();
+
+							cout << "Restart the system to log in" << NEW_LINE;
+						}
+					}
+
+					else {
 						ofstream user(USER_DATA2 + username + ".txt");
 						user << username << NEW_LINE;
 						user << password << NEW_LINE;
 						user.close();
-					}
 
-					else {
-						cout << "Could not create account. " << GetLastError();
+						cout << "Restart the system to log in" << NEW_LINE;
 					}
 				case 0:
 					cout << "Closing..." << NEW_LINE;
@@ -764,19 +826,27 @@ int main()
 
 		else {
 			system("cls");
+
 			cout << "Creating account..." << NEW_LINE;
 
-			if (fs::create_directory(USER_DATA)) {
+			if (!fs::exists(USER_DATA) && !fs::is_directory(USER_DATA)) {
+				if (fs::create_directory(USER_DATA)) {
+					ofstream user(USER_DATA2 + username + ".txt");
+					user << username << NEW_LINE;
+					user << password << NEW_LINE;
+					user.close();
+
+					cout << "Restart the system to log in" << NEW_LINE;
+				}
+			}
+
+			else if (fs::exists(USER_DATA) && fs::is_directory(USER_DATA)) {
 				ofstream user(USER_DATA2 + username + ".txt");
 				user << username << NEW_LINE;
 				user << password << NEW_LINE;
 				user.close();
 
 				cout << "Restart the system to log in" << NEW_LINE;
-			}
-
-			else {
-				cout << "Could not create account. " << GetLastError();
 			}
 		}
 	}
