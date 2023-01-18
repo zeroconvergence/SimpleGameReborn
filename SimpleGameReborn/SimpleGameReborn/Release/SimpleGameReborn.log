@@ -14,21 +14,22 @@ c:\users\0x6k7\source\repos\simplegamereborn\simplegamereborn\simplegamereborn.c
 c:\users\0x6k7\source\repos\simplegamereborn\simplegamereborn\simplegamereborn.cpp(153): warning C4244: 'argument': conversion from 'double' to 'DWORD', possible loss of data
 c:\users\0x6k7\source\repos\simplegamereborn\simplegamereborn\simplegamereborn.cpp(155): warning C4244: 'argument': conversion from 'double' to 'DWORD', possible loss of data
 c:\users\0x6k7\source\repos\simplegamereborn\simplegamereborn\simplegamereborn.cpp(157): warning C4244: 'argument': conversion from 'double' to 'DWORD', possible loss of data
-c:\users\0x6k7\source\repos\simplegamereborn\simplegamereborn\simplegamereborn.cpp(430): warning C4244: 'argument': conversion from 'double' to 'DWORD', possible loss of data
-c:\users\0x6k7\source\repos\simplegamereborn\simplegamereborn\simplegamereborn.cpp(646): warning C4244: 'argument': conversion from 'double' to 'DWORD', possible loss of data
-c:\users\0x6k7\source\repos\simplegamereborn\simplegamereborn\simplegamereborn.cpp(657): warning C4244: 'argument': conversion from 'double' to 'DWORD', possible loss of data
-c:\users\0x6k7\source\repos\simplegamereborn\simplegamereborn\simplegamereborn.cpp(723): warning C4244: 'argument': conversion from 'double' to 'DWORD', possible loss of data
-c:\users\0x6k7\source\repos\simplegamereborn\simplegamereborn\simplegamereborn.cpp(735): warning C4244: 'argument': conversion from 'double' to 'DWORD', possible loss of data
+c:\users\0x6k7\source\repos\simplegamereborn\simplegamereborn\simplegamereborn.cpp(549): warning C4244: 'argument': conversion from 'double' to 'DWORD', possible loss of data
+c:\users\0x6k7\source\repos\simplegamereborn\simplegamereborn\simplegamereborn.cpp(769): warning C4244: 'argument': conversion from 'double' to 'DWORD', possible loss of data
+c:\users\0x6k7\source\repos\simplegamereborn\simplegamereborn\simplegamereborn.cpp(784): warning C4244: 'argument': conversion from 'double' to 'DWORD', possible loss of data
+c:\users\0x6k7\source\repos\simplegamereborn\simplegamereborn\simplegamereborn.cpp(860): warning C4244: 'argument': conversion from 'double' to 'DWORD', possible loss of data
+c:\users\0x6k7\source\repos\simplegamereborn\simplegamereborn\simplegamereborn.cpp(872): warning C4244: 'argument': conversion from 'double' to 'DWORD', possible loss of data
 c:\users\0x6k7\source\repos\simplegamereborn\simplegamereborn\simplegamereborn.cpp(41): warning C4390: ';': empty controlled statement found; is this the intent?
-c:\users\0x6k7\source\repos\simplegamereborn\simplegamereborn\simplegamereborn.cpp(518): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+c:\users\0x6k7\source\repos\simplegamereborn\simplegamereborn\simplegamereborn.cpp(388): warning C4390: ';': empty controlled statement found; is this the intent?
+c:\users\0x6k7\source\repos\simplegamereborn\simplegamereborn\simplegamereborn.cpp(637): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\time.h(506): note: see declaration of 'localtime'
-c:\users\0x6k7\source\repos\simplegamereborn\simplegamereborn\simplegamereborn.cpp(529): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+c:\users\0x6k7\source\repos\simplegamereborn\simplegamereborn\simplegamereborn.cpp(648): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\time.h(506): note: see declaration of 'localtime'
-c:\users\0x6k7\source\repos\simplegamereborn\simplegamereborn\simplegamereborn.cpp(540): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+c:\users\0x6k7\source\repos\simplegamereborn\simplegamereborn\simplegamereborn.cpp(659): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\time.h(506): note: see declaration of 'localtime'
   Generating code
-  2 of 563 functions ( 0.4%) were compiled, the rest were copied from previous compilation.
+  0 of 564 functions ( 0.0%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-    2 functions had inline decision re-evaluated but remain unchanged
+    1 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
   SimpleGameReborn.vcxproj -> C:\Users\0x6k7\source\repos\SimpleGameReborn\Release\SimpleGameReborn.exe

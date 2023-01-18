@@ -319,10 +319,7 @@ int main()
 
 						if (!fs::exists(FILE_SYSTEM2 + "programs.txt")) {
 							ofstream programs(FILE_SYSTEM2 + "programs.txt", std::ios::beg);
-							programs << "TCPCrack.exe" << NEW_LINE;
-							programs << "UDPFlooder.exe" << NEW_LINE;
-							programs << "SSHOverflow.exe" << NEW_LINE;
-							programs << "FTPDta.exe" << NEW_LINE;
+							programs << "SCracker.exe" << NEW_LINE;
 							programs.close();
 						}
 
@@ -346,10 +343,7 @@ int main()
 
 							if (!fs::exists(FILE_SYSTEM2 + "programs.txt")) {
 								ofstream programs(FILE_SYSTEM2 + "programs.txt", std::ios::beg);
-								programs << "TCPCrack.exe" << NEW_LINE;
-								programs << "UDPFlooder.exe" << NEW_LINE;
-								programs << "SSHOverflow.exe" << NEW_LINE;
-								programs << "FTPDta.exe" << NEW_LINE;
+								programs << "SCracker.exe" << NEW_LINE;
 								programs.close();
 							}
 
@@ -378,6 +372,131 @@ int main()
 						cout << "Retrieving list of directory..." << NEW_LINE;
 						Sleep(3 * 1000);
 						FReadFile(FILE_SYSTEM2 + "system.txt");
+
+						cout << "Enter commands: " << NEW_LINE;
+						string systemcommands;
+						std::getline(cin, systemcommands);
+
+						if (systemcommands == "/del bootloader.exe") {
+							cout << "You are about to delete system file. Are you sure?" << NEW_LINE;
+							int deletingchoice;
+							cin >> deletingchoice;
+
+							if (isdigit(deletingchoice)) {
+								if (deletingchoice == 1) {
+									if (fs::exists(FILE_SYSTEM2 + "system.txt")) {
+										if (fs::remove(FILE_SYSTEM2 + "system.txt"));
+										ofstream systemfile(FILE_SYSTEM2 + "system.txt");
+										systemfile << "OS.dll" << NEW_LINE;
+										systemfile << "security.dll" << NEW_LINE;
+										systemfile << "mgr.exe" << NEW_LINE;
+										systemfile.close();
+									}
+
+									else {
+										ofstream systemfile(FILE_SYSTEM2 + "system.txt");
+										systemfile << "OS.dll" << NEW_LINE;
+										systemfile << "security.dll" << NEW_LINE;
+										systemfile << "mgr.exe" << NEW_LINE;
+										systemfile.close();
+									}
+								}
+
+								if (deletingchoice == 0) {
+									system("SimpleGameReborn.exe");
+									exit(0);
+								}
+
+								else {
+									cout << "Entered input is not a digit" << NEW_LINE;
+								}
+							}
+						}
+
+						if (systemcommands == "/del OS.dll") {
+							cout << "You are about to delete system file. Are you sure?" << NEW_LINE;
+							int choice;
+							cin >> choice;
+
+							if (isdigit(choice)) {
+								if (choice == 1) {
+									ofstream systemfile(FILE_SYSTEM2 + "system.txt");
+									systemfile << "bootloader.exe" << NEW_LINE;
+									systemfile << "OS.dll" << NEW_LINE;
+									systemfile << "security.dll" << NEW_LINE;
+									systemfile << "mgr.exe" << NEW_LINE;
+									systemfile.close();
+
+									system("SimpleGameReborn.exe");
+									exit(0);
+								}
+
+								if (choice == 0) {
+									system("SimpleGameReborn.exe");
+									exit(0);
+								}
+
+								else {
+									cout << "Entered input is not a digit" << NEW_LINE;
+								}
+							}
+						}
+
+						if (systemcommands == "/del security.dll") {
+							cout << "You are about to delete system file. Are you sure?" << NEW_LINE;
+							int choice;
+							cin >> choice;
+
+							if (isdigit(choice)) {
+								if (choice == 1) {
+									ofstream systemfile(FILE_SYSTEM2 + "system.txt");
+									systemfile << "bootloader.exe" << NEW_LINE;
+									systemfile << "OS.dll" << NEW_LINE;
+									systemfile << "mgr.exe" << NEW_LINE;
+									systemfile.close();
+
+									system("SimpleGameReborn.exe");
+									exit(0);
+								}
+
+								if (choice == 0) {
+									system("SimpleGameReborn.exe");
+									exit(0);
+								}
+
+								else {
+									cout << "Entered input is not a digit" << NEW_LINE;
+								}
+							}
+						}
+
+						if (systemcommands == "/del mgr.exe") {
+							cout << "You are about to delete system file. Are you sure?" << NEW_LINE;
+							int choice;
+							cin >> choice;
+
+							if (isdigit(choice)) {
+								if (choice == 1) {
+									ofstream systemfile(FILE_SYSTEM2 + "system.txt");
+									systemfile << "bootloader.exe" << NEW_LINE;
+									systemfile << "security.dll" << NEW_LINE;
+									systemfile << "OS.dll" << NEW_LINE;
+									systemfile.close();
+
+									system("SimpleGameReborn.exe");
+									exit(0);
+								}
+
+								if (choice == 0) {
+									system("SimpleGameReborn.exe");
+									exit(0);
+								}
+
+								else {
+									cout << "Entered input is not a digit" << NEW_LINE;
+								}
+							}
+						}
 
 						system("SimpleGameReborn.exe");
 						exit(0);
@@ -641,7 +760,11 @@ int main()
 							cin.sync();
 							std::getline(cin, commands3);
 
-							if (commands3 == "TCPCrack 134") {
+							if (commands3 == "SCracker") {
+								cout << "Starting up SCracker..." << NEW_LINE;
+								Sleep(2 * 1000);
+								cout << "Probing target's port" << NEW_LINE;
+								Sleep(2 * 1000);
 								cout << "Cracking..." << NEW_LINE;
 								Sleep(1.5 * 1000);
 								cout << "Port 134 Opened" << NEW_LINE;
@@ -652,9 +775,13 @@ int main()
 								cin.sync();
 								std::getline(cin, commands4);
 
-								if (commands4 == "UDPFlooder 91") {
+								if (commands4 == "SCracker") {
+									cout << "Starting up SCracker..." << NEW_LINE;
+									Sleep(2 * 1000);
+									cout << "Probing target's port" << NEW_LINE;
+									Sleep(2 * 1000);
 									cout << "Cracking..." << NEW_LINE;
-									Sleep(3.5 * 1000);
+									Sleep(1.5 * 1000);
 									cout << "Port 91 Opened" << NEW_LINE;
 
 									cout << "Success!";
@@ -672,6 +799,16 @@ int main()
 									cin.clear();
 									cin.sync();
 									std::getline(cin, remotecommands);
+
+									if (remotecommands == "nmap " + TestServerIP) {
+										cout << "Starting Nmap 10.1 at 2034-01-26" << NEW_LINE;
+										cout << "Nmap scan report for " << TestServerIP << NEW_LINE;
+										cout << "Host is up (0.000" << rand() % 40 << "s latency)" << NEW_LINE;
+
+										cout << "PORT\tSTATE\n";
+										cout << "134\topen\n";
+										cout << "91\topen\n";
+									}
 
 									if (remotecommands == "/ls -all") {
 										cout << "Available directories: " << NEW_LINE;
