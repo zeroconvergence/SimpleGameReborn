@@ -1,0 +1,33 @@
+﻿  SimpleGameReborn.cpp
+C:\Users\0x6k7\source\repos\SimpleGameReborn\SimpleGameReborn\FileReader.h(26,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\0x6k7\source\repos\SimpleGameReborn\SimpleGameReborn\IP.h(13,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\0x6k7\source\repos\SimpleGameReborn\SimpleGameReborn\SimpleGameReborn.cpp(31,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\0x6k7\source\repos\SimpleGameReborn\SimpleGameReborn\SimpleGameReborn.cpp(91,16): warning C4244: 'argument': conversion from 'double' to 'DWORD', possible loss of data
+C:\Users\0x6k7\source\repos\SimpleGameReborn\SimpleGameReborn\SimpleGameReborn.cpp(93,16): warning C4244: 'argument': conversion from 'double' to 'DWORD', possible loss of data
+C:\Users\0x6k7\source\repos\SimpleGameReborn\SimpleGameReborn\SimpleGameReborn.cpp(95,16): warning C4244: 'argument': conversion from 'double' to 'DWORD', possible loss of data
+C:\Users\0x6k7\source\repos\SimpleGameReborn\SimpleGameReborn\SimpleGameReborn.cpp(112,16): warning C4244: 'argument': conversion from 'double' to 'DWORD', possible loss of data
+C:\Users\0x6k7\source\repos\SimpleGameReborn\SimpleGameReborn\SimpleGameReborn.cpp(114,16): warning C4244: 'argument': conversion from 'double' to 'DWORD', possible loss of data
+C:\Users\0x6k7\source\repos\SimpleGameReborn\SimpleGameReborn\SimpleGameReborn.cpp(116,16): warning C4244: 'argument': conversion from 'double' to 'DWORD', possible loss of data
+C:\Users\0x6k7\source\repos\SimpleGameReborn\SimpleGameReborn\SimpleGameReborn.cpp(133,16): warning C4244: 'argument': conversion from 'double' to 'DWORD', possible loss of data
+C:\Users\0x6k7\source\repos\SimpleGameReborn\SimpleGameReborn\SimpleGameReborn.cpp(135,16): warning C4244: 'argument': conversion from 'double' to 'DWORD', possible loss of data
+C:\Users\0x6k7\source\repos\SimpleGameReborn\SimpleGameReborn\SimpleGameReborn.cpp(137,16): warning C4244: 'argument': conversion from 'double' to 'DWORD', possible loss of data
+C:\Users\0x6k7\source\repos\SimpleGameReborn\SimpleGameReborn\SimpleGameReborn.cpp(154,16): warning C4244: 'argument': conversion from 'double' to 'DWORD', possible loss of data
+C:\Users\0x6k7\source\repos\SimpleGameReborn\SimpleGameReborn\SimpleGameReborn.cpp(156,16): warning C4244: 'argument': conversion from 'double' to 'DWORD', possible loss of data
+C:\Users\0x6k7\source\repos\SimpleGameReborn\SimpleGameReborn\SimpleGameReborn.cpp(158,16): warning C4244: 'argument': conversion from 'double' to 'DWORD', possible loss of data
+C:\Users\0x6k7\source\repos\SimpleGameReborn\SimpleGameReborn\SimpleGameReborn.cpp(514,20): warning C4244: 'argument': conversion from 'double' to 'DWORD', possible loss of data
+C:\Users\0x6k7\source\repos\SimpleGameReborn\SimpleGameReborn\SimpleGameReborn.cpp(693,16): warning C4244: 'argument': conversion from 'double' to 'DWORD', possible loss of data
+C:\Users\0x6k7\source\repos\SimpleGameReborn\SimpleGameReborn\SimpleGameReborn.cpp(740,20): warning C4244: 'argument': conversion from 'double' to 'DWORD', possible loss of data
+C:\Users\0x6k7\source\repos\SimpleGameReborn\SimpleGameReborn\SimpleGameReborn.cpp(755,21): warning C4244: 'argument': conversion from 'double' to 'DWORD', possible loss of data
+C:\Users\0x6k7\source\repos\SimpleGameReborn\SimpleGameReborn\SimpleGameReborn.cpp(831,24): warning C4244: 'argument': conversion from 'double' to 'DWORD', possible loss of data
+C:\Users\0x6k7\source\repos\SimpleGameReborn\SimpleGameReborn\SimpleGameReborn.cpp(843,24): warning C4244: 'argument': conversion from 'double' to 'DWORD', possible loss of data
+C:\Users\0x6k7\source\repos\SimpleGameReborn\SimpleGameReborn\SimpleGameReborn.cpp(42,33): warning C4390: ';': empty controlled statement found; is this the intent?
+C:\Users\0x6k7\source\repos\SimpleGameReborn\SimpleGameReborn\SimpleGameReborn.cpp(341,55): warning C4390: ';': empty controlled statement found; is this the intent?
+C:\Users\0x6k7\source\repos\SimpleGameReborn\SimpleGameReborn\SimpleGameReborn.cpp(600,24): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\0x6k7\source\repos\SimpleGameReborn\SimpleGameReborn\SimpleGameReborn.cpp(611,24): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\0x6k7\source\repos\SimpleGameReborn\SimpleGameReborn\SimpleGameReborn.cpp(622,24): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  Generating code
+  1 of 556 functions ( 0.2%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  SimpleGameReborn.vcxproj -> C:\Users\0x6k7\source\repos\SimpleGameReborn\Release\SimpleGameReborn.exe
